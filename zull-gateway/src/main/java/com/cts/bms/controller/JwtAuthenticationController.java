@@ -31,12 +31,12 @@ public class JwtAuthenticationController {
 	@Autowired
 	private JwtUserDetailsService jwtUserDetailsService;
 	
-
+	// to authenticate or to get jwt tocken
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
+		
 		authenticate(authenticationRequest.getPan().toUpperCase(), authenticationRequest.getPassword());
-
 		final UserDetails userDetails = jwtUserDetailsService.loadUserByUsername(authenticationRequest.getPan());
 
 		final String token = jwtTokenUtil.generateToken(userDetails);

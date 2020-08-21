@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.cts.bms.jwt.model.JwtRequest;
 
+// to get password from database having given pan as a username
 @FeignClient(url="localhost:9010/user", name="user")
 public interface UserClient {
 	
