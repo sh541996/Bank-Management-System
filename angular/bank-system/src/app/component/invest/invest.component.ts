@@ -43,7 +43,6 @@ export class InvestComponent implements OnInit {
 
   onSubmit() {
     this.submit = true;
-    console.log(this.investment)
     this.crudService.investment(this.investment)
       .subscribe(data => {this.response = data;
                           this.flag=false;

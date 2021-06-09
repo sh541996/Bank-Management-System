@@ -23,7 +23,6 @@ public class JwtUserDetailsService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String pan) {
 		JwtRequest response = userClient.getUserByPan(pan);
-		System.out.println("hello "+ response);
 		
 		if (response == null) {
 			throw new UsernameNotFoundException("User not found with username: " + pan);
